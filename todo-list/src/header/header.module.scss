@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: fuchsia;
+
+  & p {
+    color: black;
+    margin: 0;
+  }
+}
