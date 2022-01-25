@@ -8,7 +8,7 @@ function ContentTodo({state, dispatch, newElAdd}) {
     <div className={s.content}>
       <div>
         <TodoInpBut state={state} dispatch={dispatch} newElAdd={newElAdd}/>
-        <TodoQuest state={state} dispatch={dispatch} newElAdd={newElAdd}/>
+        <TodoQuest state={state} dispatch={dispatch}/>
       </div>
     </div>
   );

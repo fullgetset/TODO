@@ -1,12 +1,19 @@
 import s from "./todo-item.module.scss";
 
-function TodoItem({message, dispatch, newElAdd, id}) {
+const deleteItemCreator = (id) => {
+  return {
+    type: 'DELETE-ITEM',
+    id: id,
+  }
+}
+
+function TodoItem({message, dispatch, id}) {
   console.log(`message:${message} , id:${id}`)
   return (
     <li className={s.content}>
       {message}
       <button onClick={() => {
-        dispatch({type: 'DELETE-ITEM', id: id})
+        dispatch(deleteItemCreator(id))
       }} className={s.btn}>delete
       </button>
     </li>

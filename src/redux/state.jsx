@@ -4,9 +4,9 @@ export let store = {
   newElAdd: React.createRef(),
   _state: {
     messages: [
-      // {message: 'React TODO Project', id: 1},
-      // {message: 'Hello!', id: 2},
-      // {message: 'I am props', id: 3},
+      {message: 'React TODO Project', id: 1},
+      {message: 'Hello!', id: 2},
+      {message: 'I am props', id: 3},
     ],
     newPostText: 'Hello to TODO!',
   },
