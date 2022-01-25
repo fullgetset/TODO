@@ -1,6 +1,7 @@
 import s from './todo-inp.module.scss'
 import React from "react";
-import {postChangeCreator} from "../../../../redux/state";
+import {postChangeCreator} from "../../../../redux/todo-reducer";
+
 
 function TodoInp({state, newElAdd, dispatch}) {
   return (

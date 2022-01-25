@@ -1,6 +1,7 @@
 import s from "./todo-but.module.scss"
 import React from "react";
-import {addPostCreator} from "../../../../redux/state";
+import {addPostCreator} from "../../../../redux/todo-reducer";
+
 
 function TodoBut({dispatch}) {
   return (

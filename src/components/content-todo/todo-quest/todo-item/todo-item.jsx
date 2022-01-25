@@ -1,5 +1,6 @@
 import s from "./todo-item.module.scss";
-import {deleteItemCreator} from "../../../../redux/state";
+import {deleteItemCreator} from "../../../../redux/todo-reducer";
+
 
 function TodoItem({message, dispatch, id}) {
   console.log(`message:${message} , id:${id}`)
