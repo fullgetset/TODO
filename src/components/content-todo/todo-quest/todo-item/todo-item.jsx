@@ -1,11 +1,5 @@
 import s from "./todo-item.module.scss";
-
-const deleteItemCreator = (id) => {
-  return {
-    type: 'DELETE-ITEM',
-    id: id,
-  }
-}
+import {deleteItemCreator} from "../../../../redux/state";
 
 function TodoItem({message, dispatch, id}) {
   console.log(`message:${message} , id:${id}`)

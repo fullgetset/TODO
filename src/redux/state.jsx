@@ -50,3 +50,23 @@ export let store = {
     }
   }
 }
+
+
+export const postChangeCreator = () => {
+  return {
+    type: 'ON-POST-CHANGE',
+  }
+}
+
+export const addPostCreator = () => {
+  return {
+    type: 'NEW-ADD-POST',
+  }
+}
+
+export const deleteItemCreator = (id) => {
+  return {
+    type: 'DELETE-ITEM',
+    id: id,
+  }
+}

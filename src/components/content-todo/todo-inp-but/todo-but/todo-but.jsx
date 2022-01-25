@@ -1,11 +1,6 @@
 import s from "./todo-but.module.scss"
 import React from "react";
-
-const addPostCreator = () => {
-  return {
-    type: 'NEW-ADD-POST',
-  }
-}
+import {addPostCreator} from "../../../../redux/state";
 
 function TodoBut({dispatch}) {
   return (
