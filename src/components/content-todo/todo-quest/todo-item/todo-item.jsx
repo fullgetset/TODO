@@ -1,6 +1,7 @@
 import s from "./todo-item.module.scss";
 
 function TodoItem({message, dispatch, newElAdd, id}) {
+  console.log(`message:${message} , id:${id}`)
   return (
     <li className={s.content}>
       {message}

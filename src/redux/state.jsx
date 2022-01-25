@@ -4,9 +4,9 @@ export let store = {
   newElAdd: React.createRef(),
   _state: {
     messages: [
-      {message: 'React TODO Project', id: 1},
-      {message: 'Hello!', id: 2},
-      {message: 'I am props', id: 3},
+      // {message: 'React TODO Project', id: 1},
+      // {message: 'Hello!', id: 2},
+      // {message: 'I am props', id: 3},
     ],
     newPostText: 'Hello to TODO!',
   },
@@ -41,7 +41,6 @@ export let store = {
         break;
 
       case 'DELETE-ITEM':
-        console.log(1)
         this._state.messages.map(({id}) => {
           if (id === action.id) {
             this._state.messages.splice(id - 1, 1)

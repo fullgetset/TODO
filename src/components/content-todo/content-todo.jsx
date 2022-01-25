@@ -2,7 +2,7 @@ import s from './content-todo.module.scss';
 import TodoInpBut from "./todo-inp-but/todo-inp-but";
 import TodoQuest from "./todo-quest/todo-quest";
 
-function ContentTODO({state, dispatch, newElAdd}) {
+function ContentTodo({state, dispatch, newElAdd}) {
 
   return (
     <div className={s.content}>
@@ -14,4 +14,4 @@ function ContentTODO({state, dispatch, newElAdd}) {
   );
 }
 
-export default ContentTODO;
+export default ContentTodo;
