@@ -2,12 +2,13 @@ import s from './content-todo.module.scss';
 import TodoInpBut from "./todo-inp-but/todo-inp-but";
 import TodoQuest from "./todo-quest/todo-quest";
 
-function ContentTODO({arr}) {
+function ContentTODO({state, dispatch, newElAdd}) {
+
   return (
     <div className={s.content}>
       <div>
-        <TodoInpBut/>
-        <TodoQuest arr={arr}/>
+        <TodoInpBut state={state} dispatch={dispatch} newElAdd={newElAdd}/>
+        <TodoQuest state={state} dispatch={dispatch} newElAdd={newElAdd}/>
       </div>
     </div>
   );

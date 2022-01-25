@@ -1,21 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import App from './App';
+import {store} from "./redux/state";
 
-const arr = [
-  {message: 'React TODO Project', id: 1},
-  {message: 'Hello!', id: 2},
-  {message: 'I am props', id: 3},
-];
+const enterRender = (state) => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App state={state} dispatch={store.dispatch.bind(store)} newElAdd={store.newElAdd}/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App arr={arr}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+enterRender(store.getState())
+store.subscribe(enterRender)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

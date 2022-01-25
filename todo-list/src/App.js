@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from "./header/header";
-import ContentTODO from "./content-TODO/content-TODO";
+import Header from "./components/header/header";
+import ContentTODO from "./components/content-TODO/content-TODO";
 
-function App({arr}) {
+function App({state, newElAdd, dispatch}) {
   return (
     <div className="App">
       <header className={"header"}><Header/></header>
-      <main><ContentTODO arr={arr}/></main>
+      <main><ContentTODO state={state} dispatch={dispatch} newElAdd={newElAdd}/></main>
     </div>
   );
 }

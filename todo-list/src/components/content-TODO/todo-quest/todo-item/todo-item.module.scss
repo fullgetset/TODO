@@ -1,6 +1,13 @@
 .content {
+  position: relative;
   padding: 12px 8px 12px 40px;
   background: #888;
   list-style-type: none;
   margin-top: 5px;
+}
+
+.btn {
+  background-color: greenyellow;
+  position: absolute;
+  right: 20px;
 }
