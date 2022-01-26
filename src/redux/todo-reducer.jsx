@@ -30,10 +30,9 @@ const todoReducer = (state = initialState,
     case DELETE_ITEM:
       state.state.messages.map(({id}) => {
         if (id === action.id) {
-          let arr = state.state.messages.filter(({id}) => {
+          state.state.messages = state.state.messages.filter(({id}) => {
             return id !== action.id
           })
-          state.state.messages = arr;
         }
       })
       break;
