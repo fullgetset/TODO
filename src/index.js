@@ -4,7 +4,9 @@ import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom';
 import App from './App';
 import store from "./redux/redux-store";
+import {Provider} from "react-redux";
 // import {store} from "./redux/store";
+
 
 const enterRender = ({todoReducer}) => {
   ReactDOM.render(
@@ -15,7 +17,6 @@ const enterRender = ({todoReducer}) => {
   );
 }
 
-console.log(store.getState())
 
 enterRender(store.getState());
 
