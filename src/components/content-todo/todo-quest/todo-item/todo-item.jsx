@@ -3,7 +3,6 @@ import {deleteItemCreator} from "../../../../redux/todo-reducer";
 
 
 function TodoItem({message, dispatch, id}) {
-  console.log(`message:${message} , id:${id}`)
   return (
     <li className={s.content}>
       {message}

@@ -1,26 +1,36 @@
+import React from "react";
+
 const NEW_ADD_POST = 'NEW-ADD-POST';
 const ON_POST_CHANGE = 'ON-POST-CHANGE';
 const DELETE_ITEM = 'DELETE-ITEM';
 
+let initialState = {
+  newElAdd: React.createRef(),
+  state: {
+    messages: [{message: 'React TODO Project', id: 1}, {message: 'Hello!', id: 2}, {message: 'I am props', id: 3},],
+    newPostText: 'Hello to TODO!',
+  },
+};
 
-const todoReducer = (state, action, newElAdd) => {
+const todoReducer = (state = initialState,
+                     action,
+                     newElAdd = initialState.newElAdd) => {
   switch (action.type) {
     case NEW_ADD_POST:
       let object = {
-        message: newElAdd.current.value,
-        id: state.messages.length + 1,
+        message: newElAdd.current.value, id: state.state.messages.length + 1,
       }
-      state.newPostText = '';
-      state.messages.push(object)
+      state.state.newPostText = '';
+      state.state.messages.push(object)
       break;
     case ON_POST_CHANGE:
       let text = newElAdd.current.value;
-      state.newPostText = text;
+      state.state.newPostText = text;
       break;
     case DELETE_ITEM:
-      state.messages.map(({id}) => {
+      state.state.messages.map(({id}) => {
         if (id === action.id) {
-          state.messages.splice(id - 1, 1)
+          state.state.messages.splice(id - 1, 1)
         }
       })
       break;
