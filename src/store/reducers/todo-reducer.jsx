@@ -1,5 +1,4 @@
 import React from "react";
-import {initialState} from "../initialState/initial-state";
 
 
 const NEW_ADD_POST = 'NEW-ADD-POST';
@@ -7,9 +6,7 @@ const ON_POST_CHANGE = 'ON-POST-CHANGE';
 const DELETE_ITEM = 'DELETE-ITEM';
 
 
-const todoReducer = (state = initialState.state,
-                     action,
-                     newElAdd = initialState.state.newElAdd) => {
+const todoReducer = (state, action, newElAdd) => {
   switch (action.type) {
     case NEW_ADD_POST:
       let object = {

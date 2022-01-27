@@ -2,14 +2,15 @@ import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom';
-import store from "./store/store";
+// import store from "./store/store";
 import ContainerTodo from "./containers/container-todo";
+import {store} from "./store/my-store";
 
 
-const enterRender = ({todoReducer}) => {
+const enterRender = (props) => {
   ReactDOM.render(
     <React.StrictMode>
-      <ContainerTodo state={todoReducer} dispatch={store.dispatch.bind(store)} newElAdd={todoReducer.newElAdd}/>
+      <ContainerTodo state={props} dispatch={store.dispatch.bind(store)} newElAdd={store.newElAdd}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
@@ -18,11 +19,11 @@ const enterRender = ({todoReducer}) => {
 
 enterRender(store.getState());
 
-// store.subscribe(enterRender);
-store.subscribe(() => {
-  let state = store.getState();
-  enterRender(state);
-});
+store.subscribe(enterRender);
+// store.subscribe(() => {
+//   let state = store.getState();
+//   enterRender(state);
+// });
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
