@@ -1,14 +1,11 @@
 import s from "./todo-item.module.scss";
-import {deleteItemCreator} from "../../../../redux/todo-reducer";
 
 
-function TodoItem({message, dispatch, id}) {
+function TodoItem({message, onClick}) {
   return (
     <li className={s.content}>
       {message}
-      <button onClick={() => {
-        dispatch(deleteItemCreator(id))
-      }} className={s.btn}>delete
+      <button onClick={onClick} className={s.btn}>delete
       </button>
     </li>
   );

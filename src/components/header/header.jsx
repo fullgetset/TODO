@@ -1,11 +1,10 @@
 import s from './header.module.scss'
 
 function Header() {
-  const str = 'Hello to TODO!'
   return (
-    <div className={s.header}>
-      <p>{str}</p>
-    </div>
+    <header className={s.header}>
+      <p>{'Hello to TODO!'}</p>
+    </header>
   );
 }
 

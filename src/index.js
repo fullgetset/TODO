@@ -2,16 +2,14 @@ import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom';
-import App from './App';
-import store from "./redux/redux-store";
-import {Provider} from "react-redux";
-// import {store} from "./redux/store";
+import store from "./store/store";
+import ContainerTodo from "./containers/container-todo";
 
 
 const enterRender = ({todoReducer}) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={todoReducer.state} dispatch={store.dispatch.bind(store)} newElAdd={todoReducer.newElAdd}/>
+      <ContainerTodo state={todoReducer} dispatch={store.dispatch.bind(store)} newElAdd={todoReducer.newElAdd}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
