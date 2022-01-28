@@ -7,23 +7,23 @@ import ContainerTodo from "./containers/container-todo";
 import {store} from "./store/my-store";
 
 
-const enterRender = (props) => {
+const enterRender = ({todoReducer}) => {
   ReactDOM.render(
     <React.StrictMode>
-      <ContainerTodo state={props} dispatch={store.dispatch.bind(store)} newElAdd={store.newElAdd}/>
+      <ContainerTodo state={todoReducer} dispatch={store.dispatch.bind(store)}
+                     newElAdd={todoReducer.newElAdd}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
 
-
 enterRender(store.getState());
 
-store.subscribe(enterRender);
-// store.subscribe(() => {
-//   let state = store.getState();
-//   enterRender(state);
-// });
+
+store.subscribe(() => {
+  let state = store.getState();
+  enterRender(state);
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

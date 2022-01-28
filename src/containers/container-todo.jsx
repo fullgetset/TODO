@@ -10,8 +10,12 @@ import {postChangeCreator} from "../store/actions/postChangeCreator";
 import {deleteItemCreator} from "../store/actions/deleteItemCreator";
 
 
-const ContainerTodo = ({state, dispatch, newElAdd}) => {
+const ContainerTodo = ({state, dispatch}) => {
+
   const {messages} = state;
+  const {newPostText} = state;
+  const {newElAdd} = state
+
 
   const handleClick = () => {
     dispatch(addPostCreator())
@@ -30,7 +34,7 @@ const ContainerTodo = ({state, dispatch, newElAdd}) => {
       <Header/>
       <ContentTodo>
         <TodoInpBut>
-          <TodoInp text={state.newPostText} onPostChangeInp={onPostChangeInp} newElAdd={newElAdd}/>
+          <TodoInp text={newPostText} onPostChangeInp={onPostChangeInp} newElAdd={newElAdd}/>
           <TodoBut dispatch={dispatch} onClick={handleClick}/>
         </TodoInpBut>
         <TodoQuest>
