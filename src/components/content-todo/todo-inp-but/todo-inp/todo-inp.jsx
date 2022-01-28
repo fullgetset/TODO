@@ -1,18 +1,18 @@
-import s from './todo-inp.module.scss'
 import React from "react";
+import s from './todo-inp.module.scss'
 
 
-function TodoInp({state, newElAdd, dispatch}) {
-
+function TodoInp({text, newElAdd, onPostChangeInp}) {
   return (
-    <input value={state.newPostText} onChange={() => {
-      dispatch({type: 'ON-POST-CHANGE'})
-    }} ref={newElAdd} placeholder={'Введите задание!'}
-           className={s.content__inp}
-           type="text"/>
+    <input
+      value={text}
+      onChange={onPostChangeInp}
+      ref={newElAdd}
+      placeholder={'Введите задание!'}
+      className={s.content__inp}
+      type="text"
+    />
   );
 }
 
 export default TodoInp;
-
-
